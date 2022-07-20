@@ -21,6 +21,6 @@ Collaborative perception has recently shown great potential to improve perceptio
          alt="无法显示图片时显示的文字"
          style="zoom:这里写图片的缩放百分比"/>
     <br>		<!--换行-->
-    Backbone of our latency-aware collaborative perception system	<!--标题-->
+    Architecture of our SyncNet	<!--标题-->
     </center>
 </div>
