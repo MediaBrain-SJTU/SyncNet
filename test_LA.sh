@@ -1,0 +1,1 @@
+CUDA_VISIBLE_DEVICES=0 python ./tools/LA-det/test_LAcodet.py --data /GPFS/public/V2XSim2LA/val --resume ./LA_disco.pth --compress_level 2 --compensation_flag SyncLSTM --tau 2 0 2 2 2 2 
