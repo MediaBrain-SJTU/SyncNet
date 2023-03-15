@@ -3,10 +3,8 @@ import torch
 import torch.nn as nn
 import torch.nn.functional as F
 import os
-from coperception.models.LAdet.SyncFormer import SyncFormer
 from coperception.models.det.base import IntermediateModelBase
 from .SyncLSTM import SyncLSTM
-from .SyncFormer import SyncFormer
 from .SyncBaseline import SyncBaseline
 class SyncDiscoNet(IntermediateModelBase):
     """DiscoNet.
@@ -32,8 +30,6 @@ class SyncDiscoNet(IntermediateModelBase):
             self.pixel_weighted_fusion = PixelWeightedFusionSoftmax(128)
         if config.compensation_flag == 'SyncLSTM':
             self.compensation = SyncLSTM(channel_size=int(256/(2**compress_level)), k=self.k)
-        if config.compensation_flag == 'SyncFormer':
-            self.compensation = SyncFormer(channel_size=int(256/(2**compress_level)), k=self.k)
         if config.compensation_flag == 'Baseline':
             self.compensation = SyncBaseline()
         self.compensation_loss = nn.SmoothL1Loss(reduction='sum')
